@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="./books-assortment-with-dark-background.jpg"> -->
+    <div class="container">
+        <form class="signup-form" id="signupForm" onsubmit="return validateForm()">
+            <!-- Form content -->
+           
+        
+            <h2>SIGNUP</h2>
+
+            <label for="firstname">FirstName:</label>
+            <input type="text" id="firstname" name="firstname" pattern="^[A-Za-z]+$" required>
+
+            <label for="lastname">LastName:</label>
+            <input type="text" id="lastname" name="lastname" pattern="^[A-Za-z]+$" required>
+
+            <label for="number">Number:</label>
+            <input type="text" id="number" name="number" placeholder="10 digit" required>
+            <div class="error-message" id="number-error">Invalid phone number. Must start with 6, 7, 8, or 9.</div>
+
+            <label for="mail-id">MailID:</label>
+            <input type="text" id="mail-id" name="mail-id" placeholder="example@gmail.com" required>
+            <div class="error-message" id="email-error">Invalid email format. Please use example@gmail.com.</div>
+
+            <label for="userid">UserID:</label>
+            <input type="text" id="userId" name="userid" pattern="^[A-Za-z0-9]+$" placeholder="ex:abc5467" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" pattern="^[A-Za-z0-9]{8}$" placeholder="only 8 characters, no special characters" required>
+
+            <button type="submit">SIGNUP</button>
+        </form>
+    </div>
+    <script src="../js/register.js"></script>
+</body>
+</html>

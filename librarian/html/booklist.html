@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Books</title>
+    <link rel="stylesheet" href="../css/booklist.css">
+</head>
+
+
+<body>
+    <!-- <a href="admin.html" class="back-arrow">&#8592;</a> -->
+    <button onclick="adminhome()" id="back-btn">Back</button>
+    <div class="background-image">
+       
+        <div class="table-container">
+           
+            
+            <h1>List of Books</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>BookID</th>
+                        <th>Name</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Rent rate</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="booksTable">
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../js/booklist.js"></script>
+</body>

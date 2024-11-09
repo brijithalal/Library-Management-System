@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/admin.css">
+   
+</head>
+<body>
+    <header>
+        
+        <div id="img">
+            <h1>Welcome Admin</h1>
+        </div>
+        
+        <!-- <button class="logout-button" onclick="logout()">Logout</button>         -->
+        <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+        <!-- <button class="logout-button" onclick="logout()">Logout</button> -->
+    </header>
+    <div class="container">
+        <nav class="sidebar" id="sidebar-toggle">
+            
+           
+            <ul>
+                <li><a href="../html/adminaddbook.html">Add Book</a></li>
+                <li><a href="..//html/userslist.html">List of Users</a></li>
+                <li><a href="../html/booklist.html">List of Books</a></li>
+                <!-- <li><a href="../html/expirationdates.html">View Book Expiry</a></li> -->
+                <li><a href="#" onclick="logout()" id="logout-btn">LogOut</a></li>
+            </ul>
+        </nav>
+       
+        <div class="header-book">
+            <h2>Some Trending Books</h2>
+        </div>
+        
+        <div class="website-grid">
+
+            <div class="website-item">
+                <div class="grid-image">
+                    <img src="../images/thinkstraight.webp" alt="think straight">
+                    <p><b>Think Straight</b></p>
+                    <p><i>Author : Darius Foroux</i></p>
+                </div>
+            </div>
+
+
+            <div class="website-item">
+                <div class="grid-image">
+                    <img src="../images/eyeforeye.webp" alt="think straight">
+                    <p><b>An Eye For An Eye</b></p>
+                    <p><i>Author : Jeffrey Archer</i></p>
+                </div>
+            </div>
+
+
+            <div class="website-item">
+                <div class="grid-image">
+                    <img src="../images/stevejobs.webp" alt="think straight">
+                    <p><b>Steve Jobs:Success Secrets</b></p>
+                    <p><i>Author : George Ilian</i></p>
+                </div>
+            </div>
+
+            <div class="website-item">
+                <div class="grid-image">
+                    <img src="../images/lost recipie.webp" alt="think straight">
+                    <p><b>The Restaurant Of Lost Recipies</b></p>
+                    <p><i>Author : Hisashi Kashiwai</i></p>
+                </div>
+            </div>
+            <div class="website-item">
+                <div class="grid-image">
+                    <img src="../images/wealth.webp" alt="think straight">
+                    <p><b>The wealth money can't buy</b></p>
+                    <p><i>Author : Robin Sharma</i></p>
+                </div>
+            </div>
+            <div class="website-item">
+                <div class="grid-image">
+                    <img src="../images/morisaki bookshop.jpg" alt="think straight">
+                    <p><b>More Days at the Morisaki Bookshop</b></p>
+                    <p><i>Author : Satoshi Yagisawa</i></p>
+                </div>
+            </div>
+         
+
+        </div>
+       
+    </div>
+    <footer>
+        <p>&copy; 2024. All rights reserved.</p>
+        <ul>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+       </footer>
+  
+    <script src="../js/admin.js"></script>
+</body>
+</html>
+
+

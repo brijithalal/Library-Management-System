@@ -1,0 +1,80 @@
+body,html {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-image: url(../images/two-open-books-front-two-stacks-books.jpg);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    /* flex-direction: column; */
+}
+
+.table-container {
+    background-color: rgb(255, 255, 255,0.3);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    /* max-width: 1000px; */
+}
+
+h2 {
+    text-align: center;
+    /* margin-bottom: 20px; */
+    color: #333;
+    
+}
+
+table {
+    /* width: 50%; */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead th {
+    background-color: rgb(106, 129, 153,0.6);
+    color: black;
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.status-active {
+    color: green;
+    font-weight: bold;
+}
+
+.status-expired {
+    color: red;
+    font-weight: bold;
+}
+
+#back-btn{
+    padding: 10px;
+    margin-bottom: 600px;
+    margin-right: 100px;
+    width: 7%;
+    border-radius: 6px;
+    background-color: rgb(106, 129, 153,0.9);
+    cursor: pointer;
+}
+
+#back-btn:hover{
+    background-color: black;
+    color: white;
+}

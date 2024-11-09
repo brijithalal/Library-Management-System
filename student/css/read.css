@@ -1,0 +1,83 @@
+body,html {
+    background-image: url('/images/front-view-book-line-with-flowers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1.4; 
+    font-family: Arial, sans-serif;
+}
+
+.reading-interface {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    width: 60%;
+    margin: 0 auto;
+    /* box-shadow: 0 4px 8px rgba(2, 0, 0, 0.1); */
+    border-radius: 9px;
+}
+.page-content {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+    background-color: #fff;
+}
+img {
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#back-btn{
+    padding: 10px;
+    /* margin-bottom: 600px; */
+    margin-right: 100px;
+    width: 7%;
+    border-radius: 6px;
+    background-color: rgba(39, 101, 168, 0.9);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+
+
+footer {
+    background-color: #AF1740; /* SaddleBrown */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}

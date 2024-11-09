@@ -1,0 +1,42 @@
+body {
+    background-image: url('creative-composition-with-books-flower.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8; /* Decrease background opacity */
+    font-family: Arial, sans-serif;
+}
+#login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+#login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#login-container input[type="text"], #login-container input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#login-container input[type="submit"] {
+    width: 97%;
+    padding: 10px;
+    background: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#login-container input[type="submit"]:hover {
+    background: #4cae4c;
+}
+
+.dimmed {
+    opacity: 0.3;
+}

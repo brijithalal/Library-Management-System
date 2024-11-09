@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.navbar {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    background-color: #333; /* Dark background for navbar */
+}
+
+.navbar li {
+    display: inline-block; /* Horizontal layout */
+    position: relative; /* For absolute positioning of dropdown */
+}
+
+.navbar a {
+    color: white; /* Text color */
+    padding: 14px 16px; /* Spacing */
+    text-decoration: none; /* Remove underline */
+}
+
+.navbar .dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute; /* Position dropdown */
+    background-color: #f9f9f9; /* Light background */
+    min-width: 160px; /* Minimum width of dropdown */
+    z-index: 1; /* Keep it above other content */
+}
+
+.dropdown-content li {
+    display: block; /* Stack dropdown items vertically */
+}
+
+.dropdown-content li a {
+    color: black; /* Text color for dropdown items */
+    padding: 12px 16px; /* Spacing */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-content li a:hover {
+    background-color: #ddd; /* Highlight on hover */
+}
+
+.search-form {
+    margin: 20px 0; /* Spacing around the search form */
+}
+
+#results {
+    margin-top: 20px; /* Spacing above results */
+    font-family: Arial, sans-serif; /* Font for results */
+}
+
+#results div {
+    padding: 10px; /* Spacing for each result */
+    border-bottom: 1px solid #ccc; /* Line between results */
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="./studenthome.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" onclick="toggleDropdown(event)" style="color: bisque; text-decoration: none;">Genre</a>
+                <ul class="dropdown-content">
+                    <li><a href="../fiction/fiction.html">Fiction</a></li>
+                    <li><a href="../nonfiction/nonfiction.html">Non-Fiction</a></li>
+                    <li><a href="../biography/biography.html">Biography</a></li>
+                    <li><a href="../study/study.html">Studies Related</a></li>
+                    <li><a href="../research/research.html">Research Books</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="search-form">
+        <form id="searchForm">
+            <select id="categorySelect" name="category">
+                <option value="all">All Genres</option>
+                <option value="fiction">Fiction</option>
+                <option value="non-fiction">Non-Fiction</option>
+                <option value="biography">Biography</option>
+                <option value="study">Studies Related</option>
+                <option value="research">Research Books</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Search..." name="query">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+        // Sample book data
+const books = [
+    { title: "The Great Gatsby", category: "fiction" },
+    { title: "A Brief History of Time", category: "non-fiction" },
+    { title: "The Diary of a Young Girl", category: "biography" },
+    { title: "Understanding Psychology", category: "study" },
+    { title: "The Art of Research", category: "research" },
+    { title: "1984", category: "fiction" },
+    { title: "Sapiens: A Brief History of Humankind", category: "non-fiction" },
+    { title: "Becoming", category: "biography" },
+    { title: "The Study of History", category: "study" },
+    { title: "Research Methods in Psychology", category: "research" },
+];
+
+// Search function
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form submission
+
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const category = document.getElementById('categorySelect').value;
+
+    const filteredBooks = books.filter(book => {
+        const matchesCategory = category === 'all' || book.category === category;
+        const matchesQuery = book.title.toLowerCase().includes(query);
+        return matchesCategory && matchesQuery;
+    });
+
+    displayResults(filteredBooks);
+});
+
+// Display results function
+function displayResults(filteredBooks) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+    if (filteredBooks.length === 0) {
+        resultsDiv.innerHTML = '<p>No results found.</p>';
+        return;
+    }
+
+    filteredBooks.forEach(book => {
+        const bookDiv = document.createElement('div');
+        bookDiv.textContent = book.title;
+        resultsDiv.appendChild(bookDiv);
+    });
+}
+
+// Dropdown toggle functionality
+function toggleDropdown(event) {
+    event.preventDefault(); // Prevent default anchor click behavior
+    const dropdown = event.target.nextElementSibling; // Get the dropdown content
+
+    // Toggle the display property
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none"; // Hide dropdown
+    } else {
+        dropdown.style.display = "block"; // Show dropdown
+    }
+}
+
+// Close the dropdown if clicked outside of it
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown > a')) {
+        const dropdowns = document.querySelectorAll('.dropdown-content');
+        dropdowns.forEach(dropdown => {
+            dropdown.style.display = 'none'; // Hide dropdowns
+        });
+    }
+}
+
+    </script> <!-- Link to your JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Interface</title>
+    <style>
+        .reading-interface {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            background-color: #fdfdfd;
+            width: 60%;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .page-content {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+            background-color: #fff;
+        }
+        img {
+            width: 50%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="reading-interface">
+        <h2 id="bookTitleDisplay">Select a Book</h2>
+        
+        <select id="bookSelect" onchange="loadBook()">
+            <option value="" disabled selected>Select a book</option>
+            <option value="sampleBook">Atomic Habits</option>
+            <option value="anotherBook">Ikigai</option>
+            <option value="thirdBook">The Power of Now</option>
+            <option value="fourthBook">Educated</option>
+        </select>
+
+        <img id="bookImage" src="" alt="Book Page Image" />
+        <div id="bookPageDisplay" class="page-content"></div>
+        <div class="navigation-buttons">
+            <button id="prevPageButton" onclick="prevPage()">Previous Page</button>
+            <button id="nextPageButton" onclick="nextPage()">Next Page</button>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for books with image sources and captions
+        let books = {
+            sampleBook: [
+                {
+                    image: "images/avtar.jpg",
+                    caption: "Atomic Habits - Page 1: Welcome to 'The Journey of Discovery.'"
+                },
+                {
+                    image: "images/sampleBook_page2.jpg",
+                    caption: "Atomic Habits - Page 2: Here is the second page with more content."
+                },
+                {
+                    image: "images/sampleBook_page3.jpg",
+                    caption: "Atomic Habits - Page 3: And now we are on the third page."
+                }
+            ],
+            anotherBook: [
+                {
+                    image: "images/atomic.png",
+                    caption: "Ikigai - Page 1: Discovering your reason for being."
+                },
+                {
+                    image: "images/anotherBook_page2.jpg",
+                    caption: "Ikigai - Page 2: The intersection of passion, mission, vocation, and profession."
+                },
+                {
+                    image: "images/anotherBook_page3.jpg",
+                    caption: "Ikigai - Page 3: Living a fulfilled life."
+                }
+            ],
+            thirdBook: [
+                {
+                    image: "images/powerOfNow_page1.jpg",
+                    caption: "The Power of Now - Page 1: Being present in the moment."
+                },
+                {
+                    image: "images/powerOfNow_page2.jpg",
+                    caption: "The Power of Now - Page 2: Transcending thought."
+                },
+                {
+                    image: "images/powerOfNow_page3.jpg",
+                    caption: "The Power of Now - Page 3: Finding inner peace."
+                }
+            ],
+            fourthBook: [
+                {
+                    image: "images/educated_page1.jpg",
+                    caption: "Educated - Page 1: A memoir about a woman's quest for knowledge."
+                },
+                {
+                    image: "images/educated_page2.jpg",
+                    caption: "Educated - Page 2: The importance of education in overcoming adversity."
+                },
+                {
+                    image: "images/educated_page3.jpg",
+                    caption: "Educated - Page 3: The power of self-discovery through learning."
+                }
+            ]
+        };
+
+        let currentBook = null; // The currently selected book
+        let currentPageIndex = 0; // Index of the current page
+
+        // Load the selected book
+        function loadBook() {
+            const bookSelect = document.getElementById('bookSelect');
+            currentBook = bookSelect.value; // Get the selected book
+            currentPageIndex = 0; // Reset to the first page
+            displayPage(currentPageIndex); // Display the first page of the selected book
+        }
+
+        // Display the page based on the current page index
+        function displayPage(pageIndex) {
+            if (currentBook && pageIndex >= 0 && pageIndex < books[currentBook].length) {
+                // Set the image source
+                document.getElementById('bookImage').src = books[currentBook][pageIndex].image;
+
+                // Handle loading errors with a placeholder
+                document.getElementById('bookImage').onerror = function() {
+                    this.src = 'images/placeholder.jpg'; // Path to your placeholder image
+                };
+
+                // Set the caption for the current page
+                document.getElementById('bookPageDisplay').textContent = books[currentBook][pageIndex].caption;
+
+                // Update the book title
+                document.getElementById('bookTitleDisplay').textContent = currentBook.charAt(0).toUpperCase() + currentBook.slice(1).replace(/([A-Z])/g, ' $1');
+            }
+        }
+
+        // Function for the Previous Page button
+        function prevPage() {
+            if (currentPageIndex > 0) {
+                currentPageIndex--;
+                displayPage(currentPageIndex);
+            } else {
+                alert("You are on the first page.");
+            }
+        }
+
+        // Function for the Next Page button
+        function nextPage() {
+            if (currentPageIndex < books[currentBook].length - 1) {
+                currentPageIndex++;
+                displayPage(currentPageIndex);
+            } else {
+                alert("You are on the last page.");
+            }
+        }
+
+        // Display the first page on load
+        window.onload = () => {
+            const bookSelect = document.getElementById('bookSelect');
+            if (bookSelect.value) {
+                loadBook();
+            }
+        };
+    </script>
+</body>
+</html> -->

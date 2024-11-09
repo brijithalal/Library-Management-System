@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../css/style.css"> 
+</head>
+<body>
+    <div class="container">
+        <form class="signup-form" id="loginForm">
+            <h2>STUDENT LOGIN</h2>
+            <label for="username">UserID:</label>
+            <input type="text" id="userId" name="userId" pattern="^[A-Za-z0-9]+$" placeholder="ex:abcyu456" required>
+            <div id="userId-error" style="display:none; color:red;"></div>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" pattern="^[A-Za-z0-9]{8}+$" placeholder="only 8 and no spcl character" required>
+            <div id="password-error" style="display:none; color:red;"></div>
+            
+            <button type="submit"  onclick="login()">LOGIN</button>
+            <!-- <a href="forget.html">Forget password?</a> -->
+            <div class="signup-container">
+                <div>New user?</div>
+                <div><a href="register.html">Signup</a></div>
+            </div>
+        </form>
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+</html>

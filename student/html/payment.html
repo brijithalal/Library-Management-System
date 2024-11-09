@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Payment</title>
+    <link rel="stylesheet" href="../css/payment.css">
+</head>
+<body>
+    <div class="background"></div>
+    <h1>Choose Payment Method</h1>
+    <div class="content">
+        <div class="payment-options">
+            <div class="option">
+                <img src="/images/gpay2.png" alt="gpay">
+                <h2>Google Pay</h2>
+                <button onclick="openPopup('Google Pay')">Choose</button>
+            </div>
+            <div class="option">
+                <img src="/images/visa.png" alt="cc">
+                <h2>Credit Card</h2>
+                <button onclick="openPopup('Credit Card')">Choose</button>
+            </div>
+            <div class="option">
+                <img src="/images/bank-transfer.svg" alt="bank">
+                <h2>Bank Transfer</h2>
+                <button onclick="openPopup('Bank Transfer')">Choose</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2 id="payment-method"></h2>
+            <form id="payment-form">
+                <div id="payment-details"></div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="customAlert">
+        <p id="alertMessage"></p>
+        <button onclick="redirectToHome()">OK</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+        <script src="../js/payment.js"></script>
+</body>
+</html>

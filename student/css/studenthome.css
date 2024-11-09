@@ -1,0 +1,616 @@
+/* body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/creative-composition-with-books-flower.jpg") no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    /* background: #FBD5AB; */
+    /* background-color:rgba(255, 218, 185, 0.5) ;
+    margin-bottom: 10px;
+    
+} */
+
+/* .header-content {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+/* .profile { */
+    /* position: relative; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* margin-right: 40px;
+    padding: 70px;
+} */
+/* 
+.profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+} */
+/* 
+.profile img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+} */
+/* 
+.profile .dropdown {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: 1;
+} */
+/* 
+.profile .dropdown.show {
+    display: block;
+    opacity: 1;
+} */
+/* 
+.profile .dropdown.hide {
+    opacity: 0;
+} */
+
+/* nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+nav ul li ul.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    height: 150px;
+}
+nav ul li:hover ul.dropdown-content {
+    display: block;
+}  */
+
+/* book images */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100;1,14..32,100&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100;1,14..32,100&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.book {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    /* background: rgb(216, 213, 207,0.5); */
+    color: antiquewhite;
+    background: rgba(39, 38, 37, 0.9);
+    transition: transform 0.3s;
+}
+
+.book img {
+    width: 100%;
+    height: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-details p{
+    font-size: 14px;
+}
+
+.book img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.see-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #6b3638;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.see-more:hover {
+    background: #180303;
+}
+
+/* 
+.author-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.author-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    max-height: 300px; 
+}
+
+.author-container.expanded {
+    max-height: 800px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.author img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.author-details {
+    flex: 1;
+}
+
+.author-details h3 {
+    margin: 0 0 10px;
+} */
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+}
+
+.author-container.expanded .books {
+    max-height: 500px; 
+}
+
+.books img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.plan-container {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 500px;
+    margin-left: 450px;
+}
+
+.plan {
+    margin: 10px;
+}
+
+.plan h3 {
+    margin: 0;
+}
+
+.plan button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* sidebarcss */
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    position: relative;
+    background-image: url('/images/annie-spratt-Ik8hRvVQzFo-unsplash.jpg');
+    /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    /* Ensure it covers the entire viewport height */
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Semi-transparent background */
+    padding: 30px;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #4CAF50;
+    /* Hover color */
+}
+
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: rgba(77, 74, 63, 0.9);
+    /* Slight transparency */
+    position: fixed;
+    left: -100%;
+    /* Fully hidden off the screen */
+    transition: 0.3s;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 10;
+    color: #f9f9f9;
+}
+
+.sidebar.active {
+    left: 0;
+    /* Slide in when active */
+}
+
+.menu-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    
+}
+
+.menu-item:hover {
+    background-color: rgba(231, 174, 68, 0.5);
+}
+
+.profile-button {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color:  rgba(94, 51, 34, 0.925);
+    /* Green color for the button */
+    border-radius: 50%;
+    /* Makes the button rounded */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    border: none;
+    
+}
+
+.main-content {
+    width: 100%;
+    padding: 20px;
+    margin-left: 0;
+    transition: 0.3s;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
+}
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Hide dropdown content by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positions below the "Genre" link */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    /* box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); */
+    z-index: 2;
+    min-width: 150px;
+   
+}
+
+.dropdown-content li {
+    list-style: none;
+}
+
+/* Style for dropdown links */
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: bisque;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+/* navigation bar */
+.nav-header {
+    /* position: absolute; */
+    background-color:black;
+}
+
+nav {
+    /* background-color: beige; */
+    top: 60px;
+    position: absolute;
+    z-index: 1;
+    margin-left: 900px;
+}
+
+nav ul li a {
+    font-size: 17px;
+    color: bisque;
+    text-decoration: none;
+}
+
+li {
+    display: inline;
+    margin-left: 40px;
+    text-decoration: none;
+}
+/* li:hover{
+    /* background-color: #333; */
+    /* padding: 15px; */
+    
+/* }  */
+
+.header {
+    /* background-color: rgba(231, 174, 68, 0.7); */
+    /* background-color: rgb(255, 248, 220,0.6); */
+    background-color: rgba(5, 4, 3, 0.8);
+    padding: 10px;
+    /* font-family: "Playwrite GB S", serif; */
+    font-weight: 500;
+    color: bisque;
+
+}
+.header h1 {
+   margin-left: 100px;
+   font-family: "Playwrite GB S", s
+  
+}
+
+/* subscription status */
+
+.subscription-status {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+
+/* edit form */
+
+#editForm {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+#editForm label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#editForm input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#editForm button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#editForm button:hover {
+    background-color: #45a049;
+}
+
+/* genre fiction */
+
+/* Dropdown Styles */
+.dropdown-content {
+    /* display: none; */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(68, 68, 68,0.9);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    /* min-width: 160px; */
+    z-index: 1;
+}
+
+.dropdown-content li a {
+    /* padding: 10px 15px; */
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    margin-right: 27px;
+}
+
+.dropdown-content li a:hover {
+    background-color: #242222;
+}
+
+
+
+/* search */
+
+/* .search-form{
+    position: absolute;
+    top: 10px;
+    margin-left: 500px;
+    margin-top: 20px;
+  } 
+ */
+
+ /* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+} */
+
+
+
+
+
+
+
+
+.search-form {
+    margin: 10px ; /* Spacing around the search form */
+}
+
+/* #results {
+    margin-top: 20px; 
+    font-family: Arial, sans-serif; 
+}
+
+ */
+
+
+
+
+ 
+footer {
+    background-color: #AF1740; /* SaddleBrown */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+   
+    margin-top: auto;
+}
+
+footer .footer-content {
+    max-width: 120px;
+    margin: 0 ;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px ;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}

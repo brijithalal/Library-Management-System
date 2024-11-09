@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Interface</title>
+    <style>
+        .reading-interface {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            background-color: #fdfdfd;
+            width: 60%;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .page-content {
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+            background-color: #fff;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reading-interface">
+
+        <h2 id="bookTitleDisplay">Book Title</h2>
+        <h2 id="bookTitleDisplay">Select a Book</h2>
+        <!-- <select id="bookSelect" onchange="loadBook()">
+            <option value="" disabled selected>Select a book</option>
+            <option value="sampleBook">Atomic Habits</option>
+            <option value="anotherBook">Ikigai</option>
+        </select> -->
+
+        <img id="bookImage" src="" alt="Book Page Image" />
+        <div id="bookPageDisplay" class="page-content"></div>
+        <div class="navigation-buttons">
+            <button id="prevPageButton" onclick="prevPage()">Previous Page</button>
+            <button id="nextPageButton" onclick="nextPage()">Next Page</button>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for books with image sources
+        let books = {
+            sampleBook: [
+                {
+                    image: "images/avtar.jpg", // Path to the image for Page 1
+                    caption: "Sample Book - Page 1: Welcome to 'The Journey of Discovery.'"
+                },
+                {
+                    image: "images/sampleBook_page2.jpg", // Path to the image for Page 2
+                    caption: "Sample Book - Page 2: Here is the second page with more content."
+                },
+                {
+                    image: "images/sampleBook_page3.jpg", // Path to the image for Page 3
+                    caption: "Sample Book - Page 3: And now we are on the third page."
+                }
+            ],
+
+        };
+
+        let currentBook = 'sampleBook'; // The currently selected book
+        let currentPageIndex = 0; // Index of the current page
+
+        // Display the page based on the current page index
+        function displayPage(pageIndex) {
+            if (currentBook && pageIndex >= 0 && pageIndex < books[currentBook].length) {
+                // Set the image source
+                document.getElementById('bookImage').src = books[currentBook][pageIndex].image;
+
+                // Optionally handle loading errors with a placeholder
+                document.getElementById('bookImage').onerror = function() {
+                    this.src = 'images/placeholder.jpg'; // Path to your placeholder image
+                };
+
+                // Set the caption for the current page
+                document.getElementById('bookPageDisplay').textContent = books[currentBook][pageIndex].caption;
+
+                // Update the book title
+                document.getElementById('bookTitleDisplay').textContent = "Sample Book";
+            }
+        }
+
+        // Function for the Previous Page button
+        function prevPage() {
+            if (currentPageIndex > 0) {
+                currentPageIndex--;
+                displayPage(currentPageIndex);
+            } else {
+                alert("You are on the first page.");
+            }
+        }
+
+        // Function for the Next Page button
+        function nextPage() {
+            if (currentPageIndex < books[currentBook].length - 1) {
+                currentPageIndex++;
+                displayPage(currentPageIndex);
+            } else {
+                alert("You are on the last page.");
+            }
+        }
+
+        // Display the first page on load
+        window.onload = () => {
+            displayPage(currentPageIndex);
+        };
+    </script>
+</body>
+</html> 

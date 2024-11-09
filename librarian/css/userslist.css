@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100;1,14..32,100&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100;1,14..32,100&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+
+body {
+    /* font-family: Arial, sans-serif; */
+    font-family: "Playwrite GB S", serif;
+    background-image: url("/images/annie-spratt-Ik8hRvVQzFo-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1300px;
+    padding: 500px;
+    margin: 0 auto;
+    opacity: 10px;
+    background-color: rgb(255, 255, 255,0.7);
+    /* background-color:#e9dfc5; */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+
+h1 {
+    text-align: center;
+    color:black;
+    font-size: 45px; 
+    margin-bottom: 20px;
+}
+
+
+.options {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.options button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #8c5635;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.options button:hover {
+    /* background-color: #0056b3; */
+    background-color: #181a1b;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    /* background-color: #806c5e; */
+    background-color: rgb(106, 129, 153,0.9);
+    color: white;
+}
+
+td {
+    background-color: rgb(240, 239, 239,0.7);
+    
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.active {
+    background-color: #2c9845;
+}
+
+.inactive {
+    background-color: #b24651;
+}
+.back-arrow {
+    
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ffffffb3;
+    border-radius: 90px; 
+    padding: 2px;
+    
+    text-decoration: none;
+    color: #000;
+    font-size: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.back-arrow:hover {
+    background-color: #804c3a;
+}
+
+#back-btn{
+    padding: 10px;
+    margin-bottom: 50px;
+    width: 7%;
+    border-radius: 6px;
+    background-color: rgba(230, 225, 224);
+    cursor: pointer;
+}
+
+#back-btn:hover{
+    background-color: #000;
+    color: #fff;
+}

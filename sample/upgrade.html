@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade Membership</title>
+    <link rel="stylesheet" href="../css/upgradeplan.css">
+    <style>
+        /* CSS for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .membership-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        p {
+            margin-top: 15px;
+            color: #333;
+        }
+
+        .purchaseBookButton {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .purchaseBookButton:hover {
+            background-color: #0056b3;
+        }
+
+        #subscription-status {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="membership-container">
+        <h1>Upgrade Your Membership</h1>
+        
+        <form id="upgrade-form">
+            <label for="current-plan">Current Membership</label>
+            <select id="current-plan">
+                <option value="silver" data-price="10">Silver - Rs 200</option>
+                <option value="gold" data-price="20" selected>Gold - Rs 500</option>
+                <option value="platinum" data-price="30">Platinum - Rs 1000</option>
+            </select>
+
+            <label for="new-plan">Upgrade To</label>
+            <select id="new-plan">
+                <option value="silver" data-price="10">Silver - Rs 200</option>
+                <option value="gold" data-price="20">Gold - Rs 500</option>
+                <option value="platinum" data-price="30">Platinum - Rs 1000</option>
+            </select>
+
+            <p id="upgrade-fee">Upgrade Fee: Rs 0</p>
+            <button type="button" class="see-more purchaseBookButton">Upgrade and Proceed to Payment</button>
+        </form>
+
+        <p id="subscription-status"></p>
+    </div>
+
+    <script>
+        document.querySelector('.purchaseBookButton').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const currentPlan = document.getElementById('current-plan');
+            const newPlan = document.getElementById('new-plan');
+
+            const currentPlanValue = currentPlan.value;
+            const newPlanValue = newPlan.value;
+
+            const currentPrice = parseInt(currentPlan.selectedOptions[0].getAttribute('data-price'));
+            const newPrice = parseInt(newPlan.selectedOptions[0].getAttribute('data-price'));
+
+            // Check if the new plan is the same as the current plan
+            if (currentPlanValue === newPlanValue) {
+                alert("You are already on this plan.");
+                return; // Stop the function here
+            }
+
+            // Check if the new plan is a downgrade
+            if (newPrice < currentPrice) {
+                alert("Downgrading to a lower plan is not allowed.");
+                return; // Stop the function here
+            }
+
+            // If it's an upgrade, proceed with storing the new plan and redirect to payment page
+            if (newPrice > currentPrice) {
+                localStorage.setItem('subscription', newPlanValue); // Store the new plan in localStorage
+                alert(`You have upgraded your plan to ${newPlanValue}`);
+
+                // Redirect to the payment page
+                window.location.href = '../html/paymentsub.html';
+            }
+        });
+
+        // Display current subscription status
+        const subscriptionStatusElement = document.getElementById('subscription-status');
+        const subscription = localStorage.getItem('subscription');
+
+        if (subscription) {
+            subscriptionStatusElement.textContent = `Active Subscription: ${subscription} plan`;
+            subscriptionStatusElement.style.color = "green";
+        } else {
+            subscriptionStatusElement.textContent = "No active subscription. Please select a subscription plan.";
+            subscriptionStatusElement.style.color = "red";
+        }
+    </script>
+</body>
+</html>

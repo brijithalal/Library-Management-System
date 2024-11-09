@@ -1,0 +1,162 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100;1,14..32,100&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100;1,14..32,100&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+
+body, 
+
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/images/dan-wayman-UVXPoRuChqc-unsplash.jpg');
+    opacity: 0.999px;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.form-container {
+    background-color:rgba(236, 225, 218, 0.7);
+    opacity: 0.05px;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    width: 500px;
+   
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #703427;
+    font-family: "Playwrite GB S", serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #111010;
+}
+
+input[type="text"],
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(131, 8, 8, 0.5);
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: #8D493A;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3326a7;
+}
+/* .back-arrow {
+    
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ffffffb3;
+    border-radius: 50%; 
+    padding: 5px;
+    
+    text-decoration: none; */
+    /* color: #000; */
+    /* font-size: 24px; */
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+    /* transition: background-color 0.3s ease; */
+/* } */
+
+/* .back-arrow:hover {
+    background-color: #804c3a;
+} */
+
+/* #back-btn{
+    padding: 10px;
+    margin-bottom: 50px;
+    width: 10%;
+    border-radius: 6px;
+    background-color: rgb(106, 129, 153,0.9);
+    cursor: pointer;
+    margin-top: 50px;
+    /* margin-right: 800px; */
+    
+    /* position: absolute; */
+/* }  */
+
+#back-btn{
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    background-color: #cf2020b8;
+    border-radius: 10%; 
+    padding: 5px;
+    width: 90px;
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#back-btn:hover{
+    background-color: #97766f;
+   
+}
+
+
+
+footer {
+    background-color: #AF1740; /* SaddleBrown */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}

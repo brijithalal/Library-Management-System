@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrade Membership</title>
+    <link rel="stylesheet" href="../css/upgrade.css">
+    <style>
+        /* CSS for the page */
+        
+    </style>
+</head>
+<body>
+    <div class="membership-container">
+        <h1>Upgrade Your Membership</h1>
+        
+        <form id="upgrade-form">
+            <label for="current-plan">Current Membership</label>
+            <select id="current-plan">
+                <!-- <option value="">No Current Plan</option> -->
+                <option value="silver" data-price="10">Silver - Rs 200</option>
+                <option value="gold" data-price="20" selected>Gold - Rs 500</option>
+                <option value="platinum" data-price="30">Platinum - Rs 1000</option>
+            </select>
+
+            <label for="new-plan">Upgrade To</label>
+            <select id="new-plan">
+                <option value="silver" data-price="10">Silver - Rs 200</option>
+                <option value="gold" data-price="20">Gold - Rs 500</option>
+                <option value="platinum" data-price="30">Platinum - Rs 1000</option>
+            </select>
+
+            
+            <!-- <p id="upgrade-fee">Upgrade Fee: Rs 0</p> -->
+            <!-- <button type="button" onclick="calculateUpgrade()">Calculate Upgrade Fee</button> -->
+            <button type="button" class="see-more purchaseBookButton"> Proceed to Subscription Plans</button>
+        </form>
+
+        <p id="subscription-status"></p>
+    </div>
+     
+    <script src="../js/upgradenew.js">
+       
+    </script>
+</body>
+</html>

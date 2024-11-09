@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Home Page</title>
+    <link href="../css/studenthome.css" rel="stylesheet">
+  
+</head>
+
+<body>
+    <div class="header">
+        <!-- <div class="search-form">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search..." name="query">
+                <button type="submit">Search</button>
+            </form>
+        </div> -->
+        <h1>WELCOME <span id="customerName"></span></h1>
+      
+        <div id="subscriptionStatus" class="subscription-status"></div>
+        <div class="nav-header">
+              
+       
+            <nav>
+                <ul>
+                    <!-- <li><a href="./studenthome.html">Home</a></li> -->
+                    <li class="dropdown">
+                        <a href="#" onclick="toggleDropdown(event)" style="color: bisque; text-decoration: none;">Genre</a>
+                        <ul class="dropdown-content">
+                            <li><a href="../fiction/fiction.html">Fiction</a></li>
+                            <li><a href="../nonfiction/nonfiction.html">Non-Fiction</a></li>
+                            <li><a href="../biography/biography.html">Biography</a></li>
+                            <li><a href="../study/study.html">Studies Related</a></li>
+                            <li><a href="../research/research.html">Research Books</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../html/authors.html">Authors</a></li>
+                    <li><a href="../html/subscription.html">Plan</a></li>
+                    <li><a href="../html/upgrade.html">Upgrade Plan</a></li>
+
+                </ul>
+            </nav>
+
+            <!---->
+
+            <div class="search-form">
+                <form id="searchForm">
+                    <select id="categorySelect" name="category">
+                        <option value="all">All Genres</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="non-fiction">Non-Fiction</option>
+                        <option value="biography">Biography</option>
+                        <option value="study">Studies Related</option>
+                        <option value="research">Research Books</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Search..." name="query">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        
+
+        </div>
+    </div>
+
+    <!--
+            <option>Genre</option>
+            <option value="fiction">Fiction</option>
+            <option value="non-fiction">Non-Fiction</option>
+            <option value="research-papers">Research Papers</option>
+            <option value="studies-related">Studies-Related</option>
+        </select>
+        <a href="#plan">Plan</a>
+        <a href="#authors">Authors</a>
+    </ul>
+    </nav> -->
+    </div>
+    <div class="profile-button" onclick="toggleSidebar()">☰</div>
+    <div class="sidebar" id="sidebar">
+        <div class="menu-item"  onclick="toggleEditForm()"><a>Edit User</a></div>
+        <div class="menu-item" onclick="activePlan()" id="activePlan">Rented Books</div>
+        <div class="menu-item" onclick="logout()">Logout</div>
+    </div>
+    
+<!-- Edit form, initially hidden -->
+
+    <!-- <div class="menu-item" onclick="toggleEditForm()">Edit User</div> -->
+    <div id="editForm" style="display: none;">
+    <label for="editFirstName">First Name:</label>
+    <input type="text" id="editFirstName" placeholder="Enter first name">
+    <label for="editLastName">Last Name:</label>
+    <input type="text" id="editLastName" placeholder="Enter last name">
+    <label for="editPhone">Phone Number:</label>
+    <input type="text" id="editPhone" placeholder="Enter phone number">
+    <button onclick="saveUserDetails()">Save</button>
+</div>
+
+    <!-- <div class="main-content" id="mainContent">
+        <div class="dropdown">
+            <h2>Choose Genre</h2>
+            <select>
+                <option value="fiction">Fiction</option>
+                <option value="non-fiction">Non-Fiction</option>
+                <option value="research-papers">Research Papers</option>
+                <option value="studies-related">Studies-Related</option>
+            </select>
+        </div>
+    </div> -->
+    <!--subscription plan-->
+
+
+    <!--search button-->
+    <!--search-->
+
+  
+
+    <main id="content">
+        <section id="home">
+            <div class="book-list">
+                <div class="book">
+                    <img src="/images/silent.webp" alt="Book 1" >
+                    <div class="book-details"  data-genre="Fiction" bookId="1">
+                        <p>Book ID: 1</p>
+                        <p>Name: The Silent Patient</p>
+                        <p>Genre: Fiction</p>
+                        <p>Original Price: Rs 350</p>
+                        <p>Rent Rate : Rs 100</p>
+                        <button class="see-more rentBookButton" onclick="rentBook(1)">Rent the book</button>
+                        <button class="see-more purchaseBookButton">Purchase book</button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="/images/ikigai.webp" alt="Book 2">
+                    <div class="book-details" data-genre="Non-Fiction" bookId="2">
+                        <p>Book ID: 2</p>
+                        <p>Name: Ikigai</p>
+                        <p>Genre: Non-Fiction</p>
+                        <p>Original Price: Rs 350</p>
+                        <p>Rent Rate : Rs 100</p>
+                        <button class="see-more rentBookButton">Rent the book</button>
+                        <button class="see-more purchaseBookButton">Purchase book</button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="/images/infinite.jpg" alt="Book 2">
+                    <div class="book-details"  data-genre="Research">
+                        <p>Book ID: 3</p>
+                        <p>Name: Infinite Cosmos</p>
+                        <p>Genre: Research Related</p>
+                        <p>Original Price: Rs 350</p>
+                        <p>Rent Rate : Rs 100</p>
+                        <button class="see-more rentBookButton">Rent the book</button>
+                        <button class="see-more purchaseBookButton">Purchase book</button>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="/images/thinkstraight.webp" alt="Book 3">
+                    <div class="book-details"  data-genre="Non-Fiction">
+                        <p>Book ID: 4</p>
+                        <p>Name: Think Straight</p>
+                        <p>Genre: Non-Fiction</p>
+                        <p>Original Price: Rs 350</p>
+                        <p>Rent Rate : Rs 100</p>
+                        <button class="see-more rentBookButton">Rent the book</button>
+                        <button class="see-more purchaseBookButton">Purchase book</button>
+                    </div>
+                </div>
+            
+                <div class="book">
+                    <img src="/images/stevejobs.webp" alt="Book 4">
+                    <div class="book-details"  data-genre="Biography">
+                        <p>Book ID: 5</p>
+                        <p>Name: Steve Jobs:Sucess Secrets</p>
+                        <p>Genre: Biography</p>
+                        <p>Original Price: Rs 350</p>
+                        <p>Rent Rate : Rs 100</p>
+                        <button class="see-more rentBookButton">Rent the book</button>
+                        <button class="see-more purchaseBookButton">Purchase book</button>
+                    </div>
+                </div>
+                
+            </div>
+
+<footer>
+    <p>&copy; 2024. All rights reserved.</p>
+    <ul>
+        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+       </footer>
+
+    <script src="../js/studenthome.js">
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* styles.css */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#bookList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.book-item {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+}
+
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for a book..." onkeyup="filterBooks()">
+    </div>
+    <div id="bookList">
+        <div class="book-item" data-name="Think Straight">
+            <img src="../images/thinkstraight.webp" alt="Think Straight">
+            <p>Think Straight</p>
+        </div>
+        <div class="book-item" data-name="The Great Gatsby">
+            <img src="../images/greatgatsby.jpg" alt="The Great Gatsby">
+            <p>The Great Gatsby</p>
+        </div>
+        <!-- Add more book items as needed -->
+    </div>
+    <script src="script.js">
+        // script.js
+function filterBooks() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const bookItems = document.querySelectorAll('.book-item');
+
+    bookItems.forEach(book => {
+        const bookName = book.getAttribute('data-name').toLowerCase();
+        if (bookName.includes(searchInput)) {
+            book.style.display = 'block';
+        } else {
+            book.style.display = 'none';
+        }
+    });
+}
+
+    </script>
+</body>
+</html>

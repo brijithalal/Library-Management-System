@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="../css/adminaddbook.css">
+
+</head>
+<button onclick="adminhome()" id="back-btn"> Back</button>
+
+<body>
+
+    <div class="form-container">
+        <h1>Add New Book</h1>
+        <form id="bookForm">
+            <label for="bookId">Book ID:</label>
+            <input type="text" id="bookId" name="bookId" required>
+
+            <label for="bookName">Name:</label>
+            <input type="text" id="bookName" name="bookName" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="genre">Genre:</label>
+            <select id="genre" name="genre" required>
+                <option value="" disabled selected>Select genre</option>
+                <option value="fiction">Fiction</option>
+                <option value="nonfiction">Non-Fiction</option>
+                <option value="biography">Biography</option>
+                <option value="studyrelated">Studies Related</option>
+                <option value="researchpapers">Studies Papers</option>
+            </select>
+
+            <label for="rent">Rent:</label>
+            <select id="rent" name="rent" required>
+                <option value="" disabled selected>Rent of the book</option>
+            </select>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="" disabled selected>Select status</option>
+                <option value="available">Available</option>
+                <option value="unavailable">Unavailable</option>
+            </select>
+
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <script src="../js/addbook.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Overdue Books</title>
+    <link rel="stylesheet" href="../css/expirationdates.css">
+    
+</head>
+<!-- <a href="admin.html" class="back-arrow">&#8592;</a> -->
+<button onclick="adminhome()" id="back-btn">Back</button>
+<body>
+    <div class="table-container">
+        <h2>View Overdue Books</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="booksTable">
+            </tbody>
+        </table>
+    </div>
+    <script src="../js/expiration.js"></script>
+</body>
+</html>

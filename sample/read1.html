@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+    <link href="../css/studenthome.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>WELCOME <span id="customerName"></span></h1>
+    </div>
+    <select id="bookDropdown">
+        <option value="">Select a book</option>
+        <option value="The Silent Patient">The Silent Patient</option>
+        <option value="Ikigai">Ikigai</option>
+        <!-- Add more books here -->
+    </select>
+    <div id="bookAction"></div>
+    <button id="rentBookButton" onclick="rentBook()">Rent</button>
+    <button id="purchaseBookButton" onclick="purchaseBook()">Purchase</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const bookDropdown = document.getElementById('bookDropdown');
+    const bookAction = document.getElementById('bookAction');
+    const rentedBooks = JSON.parse(localStorage.getItem('rentedBooks')) || [];
+    const purchasedBooks = JSON.parse(localStorage.getItem('purchasedBooks')) || [];
+
+    // Update dropdown based on rented/purchased status
+    updateDropdown();
+
+    bookDropdown.addEventListener('change', function() {
+        const selectedBook = bookDropdown.value;
+        if (rentedBooks.includes(selectedBook)) {
+            bookAction.textContent = `${selectedBook} is rented.`;
+        } else if (purchasedBooks.includes(selectedBook)) {
+            bookAction.textContent = `${selectedBook} is purchased.`;
+        } else {
+            bookAction.textContent = `${selectedBook} is available.`;
+        }
+    });
+
+    function updateDropdown() {
+        const options = bookDropdown.options;
+        for (let i = 1; i < options.length; i++) {
+            const book = options[i].value;
+            if (rentedBooks.includes(book) || purchasedBooks.includes(book)) {
+                options[i].disabled = false;
+            } else {
+                options[i].disabled = true;
+            }
+        }
+    }
+
+    window.rentBook = function() {
+        const selectedBook = bookDropdown.value;
+        if (!selectedBook) {
+            alert('Please select a book to rent.');
+            return;
+        }
+        if (!rentedBooks.includes(selectedBook) && !purchasedBooks.includes(selectedBook)) {
+            rentedBooks.push(selectedBook);
+            localStorage.setItem('rentedBooks', JSON.stringify(rentedBooks));
+            alert(`${selectedBook} has been rented.`);
+            updateDropdown();
+        } else {
+            alert(`${selectedBook} is already rented or purchased.`);
+        }
+    };
+
+    window.purchaseBook = function() {
+        const selectedBook = bookDropdown.value;
+        if (!selectedBook) {
+            alert('Please select a book to purchase.');
+            return;
+        }
+        if (!purchasedBooks.includes(selectedBook)) {
+            purchasedBooks.push(selectedBook);
+            localStorage.setItem('purchasedBooks', JSON.stringify(purchasedBooks));
+            alert(`${selectedBook} has been purchased.`);
+            updateDropdown();
+        } else {
+            alert(`${selectedBook} is already purchased.`);
+        }
+    };
+});
+
+    </script>
+</body>
+</html>

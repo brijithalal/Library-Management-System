@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Interface</title>
+    <link href="../css/readinterface.css" rel="stylesheet">
+</head>
+<body>
+    <button onclick="home()" id="back-btn">Back</button>
+    <div class="reading-interface">
+        <h2 id="bookTitleDisplay">Select a Book</h2>
+        
+        <select id="bookSelect" onchange="loadBook()">
+            <option value="" disabled selected>Select a book</option>
+            <!-- <option value="avatar">Avatar</option> -->
+            <option value="1">The Silent Patient</option>
+            <option value="2">Ikigai</option>
+            <option value="3">Infinite Cosmos</option>
+            <option value="4">Think Straight</option>
+            <option value="5">Steve Jobs : Success Secrets</option>
+            <option value="6">The Fault in our Stars</option>
+            <option value="7">To Kill a Mockingbird</option>
+            <option value="8">The Alchemist</option>
+            <option value="9">Think Like a Monk</option>
+            <option value="10">The Subtle Art of Not Giving a F*ck</option>
+            <option value="11">The art of being alone</option>
+            <option value="12">The Diary of a young girl</option>
+            <option value="13">Becoming</option>
+            <!-- <option value="fourthBook">Educated</option> -->
+        </select>
+
+        <img id="bookImage" src="" />
+        <div id="bookPageDisplay" class="page-content"></div>
+        <div class="navigation-buttons">
+            <button id="prevPageButton" onclick="prevPage()">Previous Page</button>
+            <button id="nextPageButton" onclick="nextPage()">Next Page</button>
+        </div>
+    </div>
+
+    <script src="../js/read.js"></script>
+</body>
+</html>

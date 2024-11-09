@@ -1,0 +1,117 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100;1,14..32,100&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100;1,14..32,100&family=Oxanium:wght@200..800&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+
+
+body {
+    background-image: url('../images/creative-composition-with-books-flower.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8; /* Decrease background opacity */
+    font-family: Arial, sans-serif;
+}
+#student-login {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+#student-login h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#student-login input[type="text"], #student-login input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#student-login input[type="submit"] {
+    width: 97%;
+    padding: 10px;
+    background: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#student-login input[type="submit"]:hover {
+    background: #4cae4c;
+}
+
+/* register css */
+
+.signup-form {
+    position: relative;
+    z-index: 1;
+    background: rgba(246, 243, 243, 0.9);
+    max-width: 400px;
+    top: 200px;
+    margin: -110px auto 60px auto;
+    padding: 20px 20px 8px 20px;
+    padding-bottom: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signup-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.signup-form input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.signup-form button {
+    width: 30%;
+    padding: 10px;
+    background-color: #508cc1;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 150px;
+    margin-right: 100px;
+}
+
+.signup-form button:hover {
+    background-color: #7ea9d0;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgb(61, 163, 253);
+}
+
+.signup-container a {
+    color: rgb(44, 145, 234);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.signup-container a:hover {
+    text-decoration: underline;
+}
+
+.container{
+padding-bottom: 10px;
+margin-bottom: 60px;
+}

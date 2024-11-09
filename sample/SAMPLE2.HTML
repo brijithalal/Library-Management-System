@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            overflow: hidden;
+            padding: 30px;
+        }
+        .navbar select {
+            float: left;
+            margin: 10px;
+            padding: 5px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 4px;
+            margin-left: 75%;
+        }
+        .profile {
+            float: left;
+            margin: 10px;
+            padding: 5px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .drawer {
+            display: none;
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: grey;
+            overflow-x: hidden;
+            padding-top: 60px;
+        }
+        .drawer a {
+            padding: 8px 8px 8px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: black;
+            display: block;
+        }
+        .drawer a:hover {
+            color: #f1f1f1;
+        }
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>WELCOME</h1>
+
+        <select >
+            <option value="genre" selected>Genre</option>
+            <option value="fiction">Fiction</option>
+            <option value="nonfiction">Non Fiction</option>
+            <option value="biography">Biography</option>
+            <option value="Studies Related">Studies Related</option>
+            <option value="research">Research Related</option>
+        </select>
+        
+        <div class="profile" onclick="openDrawer()">Profile</div>
+    
+    <div id="drawer" class="drawer">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeDrawer()">&times;</a>
+        <a href="#">Edit Profile</a>
+        <a href="#">Rented Book</a>
+        <a href="#">Purchased Book</a>
+        <a href="#">Active Plan</a>
+        <a href="#">Watchlist</a>
+        <a href="#">Logout</a>
+    </div>
+</div>
+    <script>
+        function openDrawer() {
+            document.getElementById("drawer").style.display = "block";
+        }
+
+        function closeDrawer() {
+            document.getElementById("drawer").style.display = "none";
+        }
+    </script>
+</body>
+</html>
